@@ -111,3 +111,6 @@ MonoBehaviour:
   rb: {fileID: 0}
   hit: 0
   hitParticles: {fileID: 19800000, guid: 921a3ff88856fe04ebc86b196fd8cc59, type: 3}
+  fallDistance: 0
+  armourText: {fileID: 143510576893061264, guid: 1b50575d23f576b44a1ae9d40b5eb38a,
+    type: 3}

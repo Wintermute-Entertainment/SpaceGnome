@@ -39,8 +39,9 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 433736654572872956}
   m_Enabled: 1
-  serializedVersion: 9
+  serializedVersion: 10
   m_Type: 0
+  m_Shape: 0
   m_Color: {r: 0.7058824, g: 0.47058827, b: 0.2627451, a: 1}
   m_Intensity: 106.68119
   m_Range: 5.08
@@ -175,6 +176,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -268,8 +270,9 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6998099218826986227}
   m_Enabled: 1
-  serializedVersion: 9
+  serializedVersion: 10
   m_Type: 0
+  m_Shape: 0
   m_Color: {r: 0.15686275, g: 0.47058827, b: 0.6156863, a: 1}
   m_Intensity: 186.3487
   m_Range: 5.08
@@ -365,23 +368,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 7286146556442916645}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5cd1735e58fc8db458b0b16411262c28, type: 3}
+  m_Script: {fileID: 11500000, guid: 9b7df51f872f14e459e97e82a5eb9c92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  myTransform: {fileID: 0}
-  playerCollider: {fileID: 0}
-  playerRigidbody: {fileID: 0}
-  mainCameraTransform: {fileID: 0}
-  mainCamera: {fileID: 0}
-  myAnimator: {fileID: 0}
-  hitParticles: {fileID: 0}
-  turnSpeed: 20
-  jumpSpeed: 30
-  terminalYVelocity: -9
-  myDefaultYVelocity: -1
-  jumpYVelocity: 3
-  jumpCancelYVelocity: 6
+  gnome: {fileID: 3366931122870224993, guid: 5a4e12fd9f1c25344b05e6b0f9a3e1d0, type: 3}
+  rb: {fileID: 1133263670784619563, guid: 1ecb146315ca23a42868f813a84e443d, type: 3}
+  hit: 0
+  hitParticles: {fileID: 1860462019381377136, guid: b7ab79f34d5366f42a7d6bf46ecaf241,
+    type: 3}
+  fallDistance: 0
+  armourText: {fileID: 143510576893061264, guid: 1b50575d23f576b44a1ae9d40b5eb38a,
+    type: 3}
 --- !u!1 &8852945455691795303
 GameObject:
   m_ObjectHideFlags: 0
@@ -437,6 +434,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
