@@ -1442,12 +1442,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myAnimator: {fileID: 8532320308204492552}
-  currentPoints: 0
+  winPanelActive: 0
+  losePanelActive: 0
   winPanel: {fileID: 0}
   losePanel: {fileID: 0}
   pointsText: {fileID: 0}
   boostText: {fileID: 0}
   armourText: {fileID: 0}
+  finalScoreText: {fileID: 0}
+  finalScoreLossText: {fileID: 0}
+  finalScoreDeathText: {fileID: 0}
 --- !u!114 &3421375164017350298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1460,7 +1464,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0e60278075bfe4e831b93dea3c8844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 100
+  speed: 50
   myTransform: {fileID: 1793250536250014322}
   playerCollider: {fileID: 1604636125427684871}
   mainCameraTransform: {fileID: 1604636125362343274}
@@ -1487,8 +1491,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cadd54e4832aeef4b9359f44cbe335cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationRange: {x: 1080, y: 1080}
-  rotationSpeed: 10
+  rotationRange: {x: 360, y: 360}
+  rotationSpeed: 5
   dampingTime: 0.2
   autoZeroVerticalOnMobile: 0
   autoZeroHorizontalOnMobile: 0
@@ -1549,7 +1553,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 0}
-  timerFinished: 0
   gameOverPanel: {fileID: 0}
   earthPanel: {fileID: 0}
   losePanel: {fileID: 0}

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4045901961103033340}
   - component: {fileID: 1488158588}
+  - component: {fileID: 89574545}
   m_Layer: 0
   m_Name: UFO 2
   m_TagString: Cube
@@ -39,11 +40,28 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1044474186712265199}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2609dc3d457b6394d9e21353b3172ea5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &89574545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1044474186712265199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1b42d2df3e94964a8089e1e279abf43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEngine: {fileID: 0}
+  anglePerUpdate: 0
+  revolutionsPerYear: 1
+  gravityAnchor: {fileID: 0}
+  objectRotated: {fileID: 1044474186712265199}
 --- !u!1 &1277011227214646701
 GameObject:
   m_ObjectHideFlags: 0
@@ -57,6 +75,7 @@ GameObject:
   - component: {fileID: 9213063207539313671}
   - component: {fileID: 1277011227214646705}
   - component: {fileID: 1277011227214646710}
+  - component: {fileID: 2094142541}
   m_Layer: 0
   m_Name: UFO_body
   m_TagString: Cube
@@ -157,6 +176,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 1
+--- !u!114 &2094142541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1277011227214646701}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2609dc3d457b6394d9e21353b3172ea5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2534246392898288854
 GameObject:
   m_ObjectHideFlags: 0
@@ -168,6 +199,7 @@ GameObject:
   - component: {fileID: 3883082733159032688}
   - component: {fileID: 6432511978217288700}
   - component: {fileID: 1582484691140797968}
+  - component: {fileID: 1936972258}
   m_Layer: 0
   m_Name: UFO_cockpit
   m_TagString: Untagged
@@ -236,3 +268,15 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &1936972258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2534246392898288854}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2609dc3d457b6394d9e21353b3172ea5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

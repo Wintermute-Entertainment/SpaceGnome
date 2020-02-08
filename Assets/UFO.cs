@@ -15,12 +15,20 @@ public class UFO : MonoBehaviour
     {
         
     }
-    private void OnCollisionEnter(Collision collision)
+    public void OnCollisionEnter(Collision collision)
     {
-        uFO_Collided = true;
+        if (collision.gameObject.tag=="Player")
+        {
+            uFO_Collided = true;
+        }
+        
     }
-    private void OnCollisionExit(Collision collision)
+    public void OnCollisionExit(Collision collision)
     {
-        uFO_Collided = false;
+        if (collision.gameObject.tag=="Player")
+        {
+            uFO_Collided = false;
+        }
+        
     }
 }

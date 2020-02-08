@@ -135,7 +135,7 @@ public class GnomeMovement : MonoBehaviour
         {
             Points.boost = 0f;
         }
-        else if (Points.boost >= 10000f)
+        if (Points.boost >= 10000f)
         {
             Points.boost = 10000f;
         }
@@ -293,7 +293,7 @@ public class GnomeMovement : MonoBehaviour
 
         //JUMP INPUT
 
-        if (Input.GetButton("Jump") /*&& isIdle == true*/)
+        if (Input.GetButton("Jump") && (!Input.GetKey(KeyCode.S)) /*&& isIdle == true*/)
         {
             StartJump();
         }
@@ -308,8 +308,8 @@ public class GnomeMovement : MonoBehaviour
             //NOSE DIVE INPUT
 
 
-            if (Input.GetKey(KeyCode.F) && Points.boost > 100)
-            {
+        if (Input.GetKey(KeyCode.F) && Points.boost > 100)
+        {
                 StartNoseDive();
 
                 speed *= 1.2f;
@@ -321,7 +321,7 @@ public class GnomeMovement : MonoBehaviour
       
         //HEAD SPIN INPUT
 
-        if (Input.GetButtonDown("Fire2") && Input.GetKey(KeyCode.A) && Points.boost > 100 /*&& isIdle == true*/)
+        if (Input.GetButtonDown("Fire2") && (!Input.GetButton("Fire3")) && Input.GetKey(KeyCode.A) && Points.boost > 100 /*&& isIdle == true*/)
         {
             StartHeadSpin();
         }
@@ -344,7 +344,7 @@ public class GnomeMovement : MonoBehaviour
         }
         //BACK SPIN INPUT
 
-        if (Input.GetButtonDown("Fire2") && Input.GetKey(KeyCode.Space) && Points.boost > 100)
+        if (Input.GetButtonDown("Fire2") && Input.GetKey(KeyCode.S))
         {
             StartSpinBack();
         }
@@ -571,7 +571,7 @@ void StartMoonWalk()
     void StartSpinBack()
     {
         ResetStates();
-        myAnimator.SetBool("StartSpinBack", true);
+        myAnimator.SetBool("spinBack", true);
         currentState = "isSpinningBack";
     }
     void SpinBack()

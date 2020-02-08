@@ -16,11 +16,11 @@ public class ISS : MonoBehaviour
     {
         
     }
-    private void OnCollisionEnter(Collision collision)
+    public void OnCollisionEnter(Collision collision)
     {
         iSS_Collided = true;
     }
-    private void OnCollisionExit(Collision collision)
+    public void OnCollisionExit(Collision collision)
     {
         iSS_Collided = false;
     }

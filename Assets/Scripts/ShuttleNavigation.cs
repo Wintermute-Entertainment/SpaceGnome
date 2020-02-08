@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Dropdown : MonoBehaviour
+public class ShuttleNavigation : MonoBehaviour
 {
-    public GameObject Shuttle;
-    public Rigidbody shuttleRB;
+    public GameObject shuttle;
+    //public Rigidbody shuttleRB;
 
     public GameObject navigationUI;
 
@@ -23,7 +23,7 @@ public class Dropdown : MonoBehaviour
     //public Camera Front;
     //public Camera Top;
 
-    //public Vector3 currentShuttlePos = Shuttle.transform.position;
+    //public Vector3 currentShuttlePos = shuttle.transform.position;
 
     public void Start()
     {
@@ -65,7 +65,7 @@ public class Dropdown : MonoBehaviour
         //Vector3.MoveTowards(transform.position, Mercury.transform.position, 10);
         //transform.Translate (transform.position + Mercury.transform.position);
         //currentShuttlePos = transform.position;
-        Shuttle.transform.position = Mercury.transform.position;
+        shuttle.transform.position = new Vector3(Mercury.transform.position.x, Mercury.transform.position.y);
         //shuttleRB.MovePosition(transform.position + Mercury.transform.position);
         //transform.Translate(Vector3.forward + Mercury.transform.position * Time.deltaTime, Space.World);
 
@@ -73,35 +73,36 @@ public class Dropdown : MonoBehaviour
     }
     public void FlytoVenus()
     {
-        Shuttle.transform.position = Venus.transform.position;
+         
+        shuttle.transform.position = Venus.transform.position;
     }
     public void FlytoEarth()
     {
-        Shuttle.transform.position = Earth.transform.position;
+        shuttle.transform.position = Earth.transform.position;
     }
     public void FlytoMars()
     {
-        Shuttle.transform.position = Mars.transform.position;
+        shuttle.transform.position = Mars.transform.position;
     }
     public void FlytoJupiter()
     {
-        Shuttle.transform.position = Jupiter.transform.position;
+        shuttle.transform.position = Jupiter.transform.position;
     }
     public void FlytoSaturn()
     {
-        Shuttle.transform.position = Saturn.transform.position;
+        shuttle.transform.position = Saturn.transform.position;
     }
     public void FlytoUranus()
     {
-        Shuttle.transform.position = Uranus.transform.position;
+        shuttle.transform.position = Uranus.transform.position;
     }
     public void FlytoNeptune()
     {
-        Shuttle.transform.position = Neptune.transform.position;
+        shuttle.transform.position = Neptune.transform.position;
     }
     public void FlytoPluto()
     {
-        Shuttle.transform.position = Pluto.transform.position;
+        shuttle.transform.position = new Vector3 (Pluto.transform.position.x, Pluto.transform.position.y);
     }
    
 

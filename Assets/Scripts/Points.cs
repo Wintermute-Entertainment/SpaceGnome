@@ -21,7 +21,7 @@ public class Points : MonoBehaviour
     public Text pointsText;
     public Text boostText;
     public Text armourText;
-    public Text debugLogText;
+    //public Text debugLogText;
     public Text finalScoreText;
     public Text finalScoreLossText;
     public Text finalScoreDeathText;
@@ -124,22 +124,22 @@ public class Points : MonoBehaviour
             {
                 boost += 10f;
             }
-            else if (myAnimator.GetBool("walkForward"))
+           if (myAnimator.GetBool("walkForward"))
             {
                 points += 10f;
                 boost -= 10f;
             }
-            else if (myAnimator.GetBool("spinRight"))
+            if (myAnimator.GetBool("spinRight"))
             {
                 points += 20f;
                 boost -= 10f;
             }
-            else if (myAnimator.GetBool("spinForward"))
+            if (myAnimator.GetBool("spinForward"))
             {
                 points += 20f;
                 boost -= 10f;
             }
-            else if (myAnimator.GetBool("spinBack"))
+            if (myAnimator.GetBool("spinBack"))
             {
                 points += 20f;
                 boost -= 10f;

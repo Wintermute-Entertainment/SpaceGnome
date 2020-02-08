@@ -10,6 +10,8 @@ public class CameraAngleToggle : MonoBehaviour
 
     private int CameraState = 1;
 
+    public GameObject cockPitCanvas;
+
     // Use this for initialization
     void Start()
     {
@@ -39,6 +41,7 @@ public class CameraAngleToggle : MonoBehaviour
                 CameraState = 3;
                 TopCamera.enabled = false;
                 FrontCamera.enabled = true;
+                cockPitCanvas.SetActive(true);
             }
 
             else if (CameraState == 3) {
