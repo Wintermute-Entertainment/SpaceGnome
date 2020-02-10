@@ -19,7 +19,7 @@ public class Timer : MonoBehaviour
     public static float remainingMinutes;
     public static float remainingSeconds;
 
-    public static float t;
+    public float t;
 
     
 
@@ -27,6 +27,7 @@ public class Timer : MonoBehaviour
     void Start()
     {
         startTime = Time.time + 120; //Time in seconds to count down from.
+        
     }
 
     // Update is called once per frame
@@ -90,7 +91,8 @@ Destroy(gameObject);
                             
 public void OxygenPowerUp()
 {
-t -= 10;
+      startTime += 30;
+Debug.Log("Picked up O2.");
 }
 
 private void OnCollisionEnter(Collision collision)
@@ -99,7 +101,7 @@ if (collision.gameObject.tag == "OxygenPowerUp")
 {
     OxygenPowerUp();
 
-    Destroy(collision.gameObject);
+    //Destroy(collision.gameObject);
 }
 
 if (collision.gameObject.name == "EarthJumpEarth")

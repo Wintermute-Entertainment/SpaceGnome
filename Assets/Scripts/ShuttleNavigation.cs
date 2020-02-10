@@ -12,7 +12,7 @@ public class ShuttleNavigation : MonoBehaviour
 
     private Vector3 currentPos;
     private Vector3 startPos;
-    
+
 
     public GameObject navigationUI;
 
@@ -48,94 +48,90 @@ public class ShuttleNavigation : MonoBehaviour
     }
     private void Update()
     {
-      //shuttle.transform.position = currentPos;
+        //shuttle.transform.position = currentPos;
 
-        if (flewToMercury)
+        //  if (flewToMercury)
+        //  {
+        //      currentPos = mercuryPos;
+        //     // flewToMercury = false;
+        //  }
+        //  if (flewToVenus)
+        //  {
+        //      currentPos = venusPos;
+        //    //  flewToVenus = false;
+        //  }
+        //  if (flewToEarth)
+        //  {
+        //      currentPos = earthPos;
+        //    //  flewToEarth = false;
+        //  }
+        //  if (flewToMars)
+        //  {
+        //      currentPos = marsPos;
+        //    //  flewToMars = false;
+        //     }
+        void LateUpdate()
         {
-            currentPos = mercuryPos;
-           // flewToMercury = false;
+
+
+            // ResetFlight();
+
         }
-        if (flewToVenus)
+
+        void FlytoMercury()
         {
-            currentPos = venusPos;
-          //  flewToVenus = false;
+
+
+            //shuttle.transform.position = new Vector3(Mercury.transform.position.x, Mercury.transform.position.y);
+            flewToMercury = true;
+            //mercuryPos = shuttle.transform.position;
+
         }
-        if (flewToEarth)
+        void FlytoVenus()
         {
-            currentPos = earthPos;
-          //  flewToEarth = false;
+            //shuttle.transform.position = new Vector3(Venus.transform.position.x, Venus.transform.position.y);
+            flewToVenus = true;
+            //currentPos = shuttle.transform.position;
         }
-        if (flewToMars)
+        void FlytoEarth()
         {
-            currentPos = marsPos;
-          //  flewToMars = false;
+            //shuttle.transform.position = Earth.transform.position;
+            flewToEarth = true;
         }
-        //else
-        //{
-        //    currentPos = startPos;
-        //}
-    }
-    private void LateUpdate()
-    {
-       
-        
-           // ResetFlight();
-        
-    }
+        void FlytoMars()
+        {
+            //shuttle.transform.position = Mars.transform.position;
+            flewToMars = true;
+        }
+        void FlytoJupiter()
+        {
+            shuttle.transform.position = Jupiter.transform.position;
+        }
+        void FlytoSaturn()
+        {
+            shuttle.transform.position = Saturn.transform.position;
+        }
+        void FlytoUranus()
+        {
+            shuttle.transform.position = Uranus.transform.position;
+        }
+        void FlytoNeptune()
+        {
+            shuttle.transform.position = Neptune.transform.position;
+        }
+        void FlytoPluto()
+        {
+            shuttle.transform.position = new Vector3(Pluto.transform.position.x, Pluto.transform.position.y);
+        }
+        void ResetFlight()
+        {
+            flewToEarth = false;
+            flewToMars = false;
+            flewToMercury = false;
+            flewToVenus = false;
 
-    public void FlytoMercury()
-    {
-
-        
-        //shuttle.transform.position = new Vector3(Mercury.transform.position.x, Mercury.transform.position.y);
-        flewToMercury = true;
-        //mercuryPos = shuttle.transform.position;
+            //shuttle.transform.position = startPos;
+        }
 
     }
-    public void FlytoVenus()
-    {
-        //shuttle.transform.position = new Vector3(Venus.transform.position.x, Venus.transform.position.y);
-        flewToVenus = true;
-        //currentPos = shuttle.transform.position;
-    }
-    public void FlytoEarth()
-    {
-        //shuttle.transform.position = Earth.transform.position;
-        flewToEarth = true;
-    }
-    public void FlytoMars()
-    {
-        //shuttle.transform.position = Mars.transform.position;
-        flewToMars = true;
-    }
-    public void FlytoJupiter()
-    {
-        shuttle.transform.position = Jupiter.transform.position;
-    }
-    public void FlytoSaturn()
-    {
-        shuttle.transform.position = Saturn.transform.position;
-    }
-    public void FlytoUranus()
-    {
-        shuttle.transform.position = Uranus.transform.position;
-    }
-    public void FlytoNeptune()
-    {
-        shuttle.transform.position = Neptune.transform.position;
-    }
-    public void FlytoPluto()
-    {
-        shuttle.transform.position = new Vector3 (Pluto.transform.position.x, Pluto.transform.position.y);
-    }
-   public void ResetFlight()
-    {
-        flewToEarth = false;
-        flewToMars = false;
-        flewToMercury = false;
-        flewToVenus = false;
-
-        //shuttle.transform.position = startPos;
-    }
-
 }

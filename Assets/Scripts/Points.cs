@@ -124,11 +124,7 @@ public class Points : MonoBehaviour
             {
                 boost += 10f;
             }
-           if (myAnimator.GetBool("walkForward"))
-            {
-                points += 10f;
-                boost -= 10f;
-            }
+           
             if (myAnimator.GetBool("spinRight"))
             {
                 points += 20f;
@@ -233,7 +229,7 @@ public class Points : MonoBehaviour
                 
                 winPanel.SetActive(true);
                 winPanelActive = true;
-                GameObject.Find("EarthJumpGnome1").SendMessage("GameOver");
+                //GameObject.Find("EarthJumpGnome1").SendMessage("GameOver");
                 FinalScore();
 
             }
@@ -243,7 +239,7 @@ public class Points : MonoBehaviour
                
                 losePanel.SetActive(true);
                 losePanelActive = true;
-                GameObject.Find("EarthJumpGnome1").SendMessage("GameOver");
+                //GameObject.Find("EarthJumpGnome1").SendMessage("GameOver");
                 FinalScore();
             }   
         }

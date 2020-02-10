@@ -1355,9 +1355,11 @@ GameObject:
   - component: {fileID: 1604636125427684871}
   - component: {fileID: 1604636125427684869}
   - component: {fileID: 1604636125427684867}
-  - component: {fileID: 1051369745}
   - component: {fileID: 6253119885119996735}
   - component: {fileID: 1051369736}
+  - component: {fileID: 1051369738}
+  - component: {fileID: 7303975412991496669}
+  - component: {fileID: 1051369734}
   m_Layer: 0
   m_Name: EarthJumpGnome 1
   m_TagString: Player
@@ -1491,12 +1493,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cadd54e4832aeef4b9359f44cbe335cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationRange: {x: 360, y: 360}
-  rotationSpeed: 5
-  dampingTime: 0.2
+  rotationRange: {x: 10000, y: 10000}
+  rotationSpeed: 4
+  dampingTime: 1
   autoZeroVerticalOnMobile: 0
   autoZeroHorizontalOnMobile: 0
-  relative: 0
+  relative: 1
 --- !u!136 &1604636125427684871
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1540,22 +1542,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverPanel: {fileID: 0}
---- !u!114 &1051369745
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3366931122870224993}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87c719c1608484344807c358664910ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timerText: {fileID: 0}
-  gameOverPanel: {fileID: 0}
-  earthPanel: {fileID: 0}
-  losePanel: {fileID: 0}
 --- !u!114 &6253119885119996735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1589,6 +1575,47 @@ MonoBehaviour:
   smoke: {fileID: 1390012914}
   fire: {fileID: 1148224705}
   explosion: {fileID: 8659680846318180242}
+--- !u!114 &1051369738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3366931122870224993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87c719c1608484344807c358664910ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerText: {fileID: 0}
+  gameOverPanel: {fileID: 0}
+  earthPanel: {fileID: 0}
+  losePanel: {fileID: 0}
+  t: 300
+--- !u!114 &7303975412991496669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3366931122870224993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fddeb9e13689cea4b9b83ea2f4463a8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1051369734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3366931122870224993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 440db155e02d9164bb3154fb9fa8032c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3425367207724578104
 GameObject:
   m_ObjectHideFlags: 0
@@ -4098,6 +4125,22 @@ PrefabInstance:
     - target: {fileID: 19800010, guid: 031d08f52af1daa4f929b85221519426, type: 3}
       propertyPath: prewarm
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800010, guid: 031d08f52af1daa4f929b85221519426, type: 3}
+      propertyPath: InitialModule.startSizeY.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800010, guid: 031d08f52af1daa4f929b85221519426, type: 3}
+      propertyPath: InitialModule.startSizeZ.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800010, guid: 031d08f52af1daa4f929b85221519426, type: 3}
+      propertyPath: InitialModule.startRotationX.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800010, guid: 031d08f52af1daa4f929b85221519426, type: 3}
+      propertyPath: InitialModule.startRotationY.minMaxState
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 19800012, guid: 031d08f52af1daa4f929b85221519426, type: 3}
       propertyPath: looping

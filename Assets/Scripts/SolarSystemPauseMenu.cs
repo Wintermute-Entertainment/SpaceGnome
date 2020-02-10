@@ -42,13 +42,17 @@ public class SolarSystemPauseMenu : MonoBehaviour
         
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
+        Cursor.visible = false;
         isPaused = false;
+        
         //shuttleTravelAnchor.transform.position = Shuttle.transform.position;
     }
     void Pause()
     {
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
+        Cursor.visible = true;
+
         isPaused = true;
     }
     public void LoadMenu()

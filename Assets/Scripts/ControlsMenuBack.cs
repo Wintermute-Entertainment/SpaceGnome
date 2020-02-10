@@ -10,4 +10,8 @@ public class ControlsMenuBack : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
         
     }
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene("EarthJump");
+    }
 }

@@ -50,7 +50,7 @@ public class ObjectCollision : MonoBehaviour
             Debug.Log(other + "hit.");
             hit = true;
             PlayerHealth.currentHealth -= damage;
-            Instantiate(hitParticles).Play();
+            Instantiate(hitParticles).Play(true);
 
 
 

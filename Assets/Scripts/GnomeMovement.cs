@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class GnomeMovement : MonoBehaviour
 {
@@ -64,17 +65,10 @@ public class GnomeMovement : MonoBehaviour
 
     //Input Actions
 
-    KeyboardControls inputAction;
-
-    //Movement
-
-    Vector3 movementInput;
-
-    //Shift Flips
-
-    Vector3 flips;
-
-
+    //public PS4PlayerMovement playerMovement;
+    
+    
+   
 
     public void Awake()
     {
@@ -84,10 +78,30 @@ public class GnomeMovement : MonoBehaviour
         myController = GetComponent<CharacterController>();
         playerRigidbody = GetComponent<Rigidbody>();
 
-        inputAction = new KeyboardControls();
-        inputAction.KeyBoardControls.Movement.performed += ctor => movementInput = ctor.ReadValue<Vector3>();
+        //inputAction = new KeyboardControls();
+        //inputAction.KeyBoardControls.Movement.performed += ctor => movementInput = ctor.ReadValue<Vector3>();
+
+        //playerMovement.Player.StartFlip.performed += context => Flip();
+        //playerMovement.Player.Movement.performed += context => MoveCharacter(context.ReadValue<Vector3>());
+
+        
+
     }
 
+    //void Move(Vector3 direction)
+    //{
+
+    //}
+    private void OnEnable()
+    {
+        //playerMovement.Enable();
+
+        
+    }
+    private void OnDisable()
+    {
+        //playerMovement.Disable();
+    }
     private void Start()
     {
         Points.points = 0f;
@@ -97,6 +111,10 @@ public class GnomeMovement : MonoBehaviour
 
     public void Update()
     {
+        //Gamepad gamePad = InputSystem.GetDevice<Gamepad>();
+
+        //if (gamePad.)
+
         if (isFallingIdle == true)
         {
             isIdle = false;
@@ -422,7 +440,6 @@ public class GnomeMovement : MonoBehaviour
         StopJump();
         StopFallingIdle();
         StopIdle();
-        
         StopNoseDive();
         StopWalk();
         StopCartWheel();
@@ -932,7 +949,7 @@ void StartMoonWalk()
         transform.rotation = Quaternion.Slerp(transform.rotation, desiredRotation, 1f * Time.deltaTime);
     }
     //Character Movement
-    void MoveCharacter()
+    public void MoveCharacter()
     {
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");

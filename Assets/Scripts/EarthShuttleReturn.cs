@@ -24,8 +24,11 @@ public class EarthShuttleReturn : MonoBehaviour
         
         if (Collision.gameObject.tag=="Player")
         {
-            earthPanel.SetActive(true);
-            
+            //earthPanel.SetActive(true);
+            Cursor.visible = true;
+            Debug.Log("Game Over via Win.");
+            Destroy(gameObject);
+
         }
     
             

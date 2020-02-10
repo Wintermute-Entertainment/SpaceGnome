@@ -11,7 +11,10 @@ public class GameEngine : MonoBehaviour
 
     [SerializeField] public BoostBar boostBar;
 
-    // Start is called before the first frame update
+    private void Awake()
+    {
+        Cursor.visible = false;
+    }
     void Start()
     {
 

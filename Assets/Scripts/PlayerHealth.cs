@@ -24,11 +24,7 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (dead)
-        {
-            print("OH NO, YOU DIED!!!");
-            print(Points.finalScore);
-        }
+        
         if (currentHealth <= 0)
         {
             Death();
@@ -41,7 +37,11 @@ public class PlayerHealth : MonoBehaviour
         {
             totalPoints = Points.currentPoints;
         }
-
+        if (dead)
+        {
+            print("OH NO, YOU DIED!!!");
+            print(Points.finalScore);
+        }
         gameOverPanel.SetActive(true);
         GameOver();
     }
@@ -49,7 +49,7 @@ public class PlayerHealth : MonoBehaviour
     
     public void GameOver()
     {
-        
+        Cursor.visible = true;
         Debug.Log("Game Over.");
         Destroy(gameObject);
         
@@ -67,6 +67,10 @@ public class PlayerHealth : MonoBehaviour
             currentHealth += 1;
             
         }
+    }
+    public void OxygenPowerUp()
+    {
+
     }
 
 }
