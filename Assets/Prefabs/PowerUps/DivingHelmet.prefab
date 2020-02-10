@@ -582,6 +582,9 @@ GameObject:
   - component: {fileID: -2574571506040217786}
   - component: {fileID: 2409339468378784917}
   - component: {fileID: 1355816877}
+  - component: {fileID: 4933142434407276378}
+  - component: {fileID: 5108175677977672031}
+  - component: {fileID: 8427170560554203570}
   m_Layer: 0
   m_Name: DivingHelmet
   m_TagString: OxygenPowerUp
@@ -598,7 +601,7 @@ Transform:
   m_GameObject: {fileID: 1410538572128595638}
   m_LocalRotation: {x: 0, y: -1, z: 0, w: 0.00000028088027}
   m_LocalPosition: {x: -4.7058563, y: -4.3065343, z: 6.253435}
-  m_LocalScale: {x: 0.82391244, y: 0.82390386, z: 0.82391244}
+  m_LocalScale: {x: 2.210969, y: 2.210946, z: 2.210969}
   m_Children:
   - {fileID: 9021435745049148530}
   - {fileID: 8952736117330964450}
@@ -700,6 +703,127 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cbbab09cf92f814698e7393a51af630, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!81 &4933142434407276378
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410538572128595638}
+  m_Enabled: 1
+--- !u!82 &5108175677977672031
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410538572128595638}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24300002, guid: d0879086e75dcb8438fe551c4a64d2f6,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: 313769da88967c44383506e99e8bd3ac, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &8427170560554203570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410538572128595638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f8408e930991b24eab95e6cc37d631b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClips:
+  - {fileID: 8300000, guid: 313769da88967c44383506e99e8bd3ac, type: 3}
+  audioSource: {fileID: 5108175677977672031}
+  audioListener: {fileID: 4933142434407276378}
 --- !u!1 &1878565511819376868
 GameObject:
   m_ObjectHideFlags: 0

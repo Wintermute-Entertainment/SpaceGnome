@@ -10,57 +10,33 @@ public class GampadInput : MonoBehaviour
 
     public float speed = 5f;
 
+    public Vector3 movement;
+
     private void Awake()
     {
-        //controls.Player.StartFlip.performed += context => StartFlip();
-        //controls.Player.Movement.performed += context => MoveCharacter(context.ReadValue<Vector3>());
-
-
+        controls = new PS4PlayerMovement();
+        myAnimator = GetComponent<Animator>();
+        controls.Player.Movement.performed += context => Move();
+        
     }
-
     public void Update()
     {
-        MoveCharacter(direction: moveDirection);
-    }
-    public void StartFlip()
-    {
-        
-        myAnimator.SetBool("frontFlip", true);
-
-
-    }
-    void Flip()
-    {
-
-        if (!Input.GetButton("Fire3"))
-        {
-            StopFlip();
-        }
-
-    }
-    void StopFlip()
-    {
-        myAnimator.SetBool("frontFlip", false);
-
+        Move();
     }
 
-    public void MoveCharacter(Vector3 direction)
+public void Move()
     {
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
-        float zAxis = Input.GetAxis("ZAxis");
-
-        //float horizontal = movementInput.x;
-        //float vertical = movementInput.y;
-        //float zAxis = movementInput.z;
-
-        //verticalInput = vertical;
-        //horizontalInput = horizontal;
-        //zAxisInput = zAxis;
-
-        Vector3 moveDirection = new Vector3(horizontal, vertical, zAxis);
+        Vector3 moveDirection = new Vector3(movement.x, movement.y, movement.z);
         transform.Translate(moveDirection * speed * Time.deltaTime, Space.Self);
         transform.Translate(moveDirection * speed * Time.deltaTime);
+    }
+    private void OnEnable()
+    {
+        controls.Enable();
+    }
+    private void OnDisable()
+    {
+        controls.Disable();
     }
 
 }

@@ -22,13 +22,7 @@ public class GnomeMovement : MonoBehaviour
     public Vector3 zeroVelocity = new Vector3(0,0,0);
     public Vector3 negativeVelocity = Vector3.down;
 
-    //AUDIO
-    public AudioClip[] audioClips;
-    public AudioSource audioSource;
-    public AudioListener audioListener;
-    public AudioClip explosion1;
-    public AudioClip explosion2;
-    public AudioClip explosion3;
+    
 
 
     //PARTICLE SYSTEMS
@@ -73,8 +67,6 @@ public class GnomeMovement : MonoBehaviour
 
     public PS4PlayerMovement playerMovement;
 
-    public InputAction playerActions;
-   
 
     public void Awake()
     {
@@ -83,8 +75,7 @@ public class GnomeMovement : MonoBehaviour
         myAnimator = GetComponent<Animator>();
         myController = GetComponent<CharacterController>();
         playerRigidbody = GetComponent<Rigidbody>();
-        audioListener = GetComponent<AudioListener>();
-        audioSource = gameObject.GetComponent<AudioSource>();
+        
 
         //inputAction = new KeyboardControls();
         //inputAction.KeyBoardControls.Movement.performed += ctor => movementInput = ctor.ReadValue<Vector3>();
@@ -100,14 +91,14 @@ public class GnomeMovement : MonoBehaviour
     //    moveDirection = value.Get<Vector3>();
     //}
 
-    private void OnEnable()
-    {
-        playerMovement.Enable();
-    }
-    private void OnDisable()
-    {
-        playerMovement.Disable();
-    }
+    //private void OnEnable()
+    //{
+    //    playerMovement.Enable();
+    //}
+    //private void OnDisable()
+    //{
+    //    playerMovement.Disable();
+    //}
     private void Start()
     {
         Points.points = 0f;
@@ -147,7 +138,7 @@ public class GnomeMovement : MonoBehaviour
     void FixedUpdate()
     {
         ApplyGravity();
-        MoveCharacter(moveDirection);
+        MoveCharacter();
         RotateCharacter();
 
     }
@@ -161,6 +152,10 @@ public class GnomeMovement : MonoBehaviour
         if (Points.boost >= 10000f)
         {
             Points.boost = 10000f;
+        }
+        if (speed > 300f)
+        {
+            speed -= 10f;
         }
     }
     //START DUMMY AVATAR SCRIPT COPY
@@ -487,7 +482,7 @@ public class GnomeMovement : MonoBehaviour
         }
         if (collision.gameObject.tag == "Meteor")
         {
-            PlayRandom();
+           
             Debug.Log("Hit Meteor.");
         }
         //else
@@ -497,13 +492,7 @@ public class GnomeMovement : MonoBehaviour
 
 
     }
-    void PlayRandom()
-    {
-        audioSource.clip = audioClips[Random.Range(0, audioClips.Length)];
-        audioSource.PlayOneShot(explosion1, 0.7f);
-
-
-    }
+    
     public void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.tag == "Cube")
@@ -966,7 +955,7 @@ void StartMoonWalk()
         transform.rotation = Quaternion.Slerp(transform.rotation, desiredRotation, 1f * Time.deltaTime);
     }
     //Character Movement
-    public void MoveCharacter(Vector3 direction)
+    public void MoveCharacter()
     {
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
