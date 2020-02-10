@@ -1474,6 +1474,12 @@ MonoBehaviour:
   myAnimator: {fileID: 8532320308204492552}
   zeroVelocity: {x: 0, y: 0, z: 0}
   negativeVelocity: {x: 0, y: -1, z: 0}
+  audioClips: []
+  audioSource: {fileID: 0}
+  audioListener: {fileID: 0}
+  explosion1: {fileID: 0}
+  explosion2: {fileID: 0}
+  explosion3: {fileID: 0}
   hitParticles: {fileID: 0}
   turnSpeed: 15
   jumpSpeed: 30
@@ -1551,15 +1557,6 @@ MonoBehaviour:
   hit: 0
   hitParticles: {fileID: 0}
   armourText: {fileID: 0}
-  audioClips:
-  - {fileID: 8300000, guid: 45fbd733d05f5f14b86e0d9b6686b43d, type: 3}
-  - {fileID: 8300000, guid: b5ca1080105a5b640955193437453fb1, type: 3}
-  - {fileID: 8300000, guid: 0267a32d912b6664db5c1345d2976778, type: 3}
-  audioSource: {fileID: 1604636125258964876}
-  audioListener: {fileID: 1604636125362343276}
-  explosion1: {fileID: 8300000, guid: 45fbd733d05f5f14b86e0d9b6686b43d, type: 3}
-  explosion2: {fileID: 8300000, guid: b5ca1080105a5b640955193437453fb1, type: 3}
-  explosion3: {fileID: 8300000, guid: 0267a32d912b6664db5c1345d2976778, type: 3}
 --- !u!114 &1051369736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1624,14 +1621,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3366931122870224993}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: f0a828e1579ec5246a5003119b0104c5,
     type: 3}
-  m_NotificationBehavior: 0
+  m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -1682,20 +1679,20 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 93bd36f6-7082-4660-a075-3e8156de8805
-    m_ActionName: Player/FloatUp[/DualShock4GamepadHID/leftTrigger,/XInputControllerWindows/leftTrigger]
+    m_ActionName: Player/FloatUp[/DualShock4GamepadHID/leftTrigger]
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 00dd3188-6686-4634-94e9-1796c4794445
-    m_ActionName: Player/FloatDown[/DualShock4GamepadHID/rightTrigger,/XInputControllerWindows/rightTrigger]
+    m_ActionName: Player/FloatDown[/DualShock4GamepadHID/rightTrigger]
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: fdb65196-05ae-41ae-b9ed-50d4a1cf0909
-    m_ActionName: Player/NoseDive[/DualShock4GamepadHID/rightShoulder,/XInputControllerWindows/rightShoulder]
+    m_ActionName: Player/NoseDive[/DualShock4GamepadHID/rightShoulder]
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Gampad
+  m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
-  m_Camera: {fileID: 1604636125362343277}
+  m_Camera: {fileID: 0}
 --- !u!1 &3425367207724578104
 GameObject:
   m_ObjectHideFlags: 0

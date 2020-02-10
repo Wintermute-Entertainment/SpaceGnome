@@ -12,15 +12,17 @@ public class GampadInput : MonoBehaviour
 
     private void Awake()
     {
+
+        controls = new PS4PlayerMovement();
         //controls.Player.StartFlip.performed += context => StartFlip();
-        //controls.Player.Movement.performed += context => MoveCharacter(context.ReadValue<Vector3>());
+        controls.Player.Movement.performed += context => MoveCharacter();
 
 
     }
 
     public void Update()
     {
-        MoveCharacter(direction: moveDirection);
+        MoveCharacter();
     }
     public void StartFlip()
     {
@@ -44,7 +46,7 @@ public class GampadInput : MonoBehaviour
 
     }
 
-    public void MoveCharacter(Vector3 direction)
+    public void MoveCharacter()
     {
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
