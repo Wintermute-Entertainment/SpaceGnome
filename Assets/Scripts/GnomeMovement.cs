@@ -19,8 +19,8 @@ public class GnomeMovement : MonoBehaviour
     private AnimatorStateInfo myAnimatorStateInfo;// ???
     private float myAnimatorNormalizedTime = 0.0f;// ???
 
-    //public Vector3 zeroVelocity = new Vector3(0,0,0);
-    //public Vector3 negativeVelocity = Vector3.down;
+    public Vector3 zeroVelocity = new Vector3(0,0,0);
+    public Vector3 negativeVelocity = Vector3.down;
 
     //AUDIO
     public AudioClip[] audioClips;
@@ -73,11 +73,8 @@ public class GnomeMovement : MonoBehaviour
 
     public PS4PlayerMovement playerMovement;
 
-    
-
-    public Vector2 direction;
-
-   // public Gamepad gamePad;
+    public InputAction playerActions;
+   
 
     public void Awake()
     {
@@ -89,26 +86,27 @@ public class GnomeMovement : MonoBehaviour
         audioListener = GetComponent<AudioListener>();
         audioSource = gameObject.GetComponent<AudioSource>();
 
-       
+        //inputAction = new KeyboardControls();
+        //inputAction.KeyBoardControls.Movement.performed += ctor => movementInput = ctor.ReadValue<Vector3>();
 
-        playerMovement = new PS4PlayerMovement();
+        //playerMovement = new PS4PlayerMovement();
 
-        playerMovement.Player.FrontFlip.performed += context => Flip();
-        playerMovement.Player.Movement.performed += context => MoveCharacter(context.ReadValue<Vector3>());
-        
+        //playerMovement.Player.StartFlip.performed += context => Flip();
+        //playerMovement.Player.Movement.performed += context => MoveCharacter(context.ReadValue<Vector3>());
+
     }
-
-    //void Move(Vector2 direction)
+    //public void OnMovement(InputValue value)
     //{
-    //    Debug.Log("Movement?" + direction);
+    //    moveDirection = value.Get<Vector3>();
     //}
-    public void OnEnable()
+
+    private void OnEnable()
     {
-        playerMovement.Player.Enable();
+        playerMovement.Enable();
     }
-    public void OnDisable()
+    private void OnDisable()
     {
-        playerMovement.Player.Disable();
+        playerMovement.Disable();
     }
     private void Start()
     {
@@ -143,15 +141,15 @@ public class GnomeMovement : MonoBehaviour
         }
 
         Debug.Log("CURRENT BOOST: " + Points.boost);
-
         
     }
-  
-    public void FixedUpdate()
+
+    void FixedUpdate()
     {
         ApplyGravity();
-        MoveCharacter(direction:moveDirection);
+        MoveCharacter(moveDirection);
         RotateCharacter();
+
     }
     void LateUpdate()
     {
@@ -974,7 +972,13 @@ void StartMoonWalk()
         float vertical = Input.GetAxis("Vertical");
         float zAxis = Input.GetAxis("ZAxis");
 
-      
+        //float horizontal = movementInput.x;
+        //float vertical = movementInput.y;
+        //float zAxis = movementInput.z;
+
+        //verticalInput = vertical;
+        //horizontalInput = horizontal;
+        //zAxisInput = zAxis;
 
         Vector3 moveDirection = new Vector3(horizontal, vertical, zAxis);
         transform.Translate(moveDirection * speed * Time.deltaTime, Space.Self);
