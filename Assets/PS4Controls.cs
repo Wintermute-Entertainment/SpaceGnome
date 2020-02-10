@@ -51,7 +51,7 @@ public class @PS4PlayerMovement : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""StartFlip"",
+                    ""name"": ""FrontFlip"",
                     ""type"": ""Button"",
                     ""id"": ""c2591483-18fe-47bd-92be-e120b72f4ec8"",
                     ""expectedControlType"": ""Button"",
@@ -178,7 +178,7 @@ public class @PS4PlayerMovement : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
-                    ""action"": ""StartFlip"",
+                    ""action"": ""FrontFlip"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
@@ -189,7 +189,7 @@ public class @PS4PlayerMovement : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
-                    ""action"": ""StartFlip"",
+                    ""action"": ""FrontFlip"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -200,7 +200,7 @@ public class @PS4PlayerMovement : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
-                    ""action"": ""StartFlip"",
+                    ""action"": ""FrontFlip"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -211,7 +211,7 @@ public class @PS4PlayerMovement : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""StartFlip"",
+                    ""action"": ""FrontFlip"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
@@ -222,7 +222,7 @@ public class @PS4PlayerMovement : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gampad"",
-                    ""action"": ""StartFlip"",
+                    ""action"": ""FrontFlip"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -233,7 +233,7 @@ public class @PS4PlayerMovement : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gampad"",
-                    ""action"": ""StartFlip"",
+                    ""action"": ""FrontFlip"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -672,7 +672,7 @@ public class @PS4PlayerMovement : IInputActionCollection, IDisposable
         m_Player_BackFlip = m_Player.FindAction("BackFlip", throwIfNotFound: true);
         m_Player_RightRoll = m_Player.FindAction("RightRoll", throwIfNotFound: true);
         m_Player_LeftRoll = m_Player.FindAction("LeftRoll", throwIfNotFound: true);
-        m_Player_StartFlip = m_Player.FindAction("StartFlip", throwIfNotFound: true);
+        m_Player_FrontFlip = m_Player.FindAction("FrontFlip", throwIfNotFound: true);
         m_Player_FrontSpin = m_Player.FindAction("FrontSpin", throwIfNotFound: true);
         m_Player_LeftSpin = m_Player.FindAction("LeftSpin", throwIfNotFound: true);
         m_Player_RightSpin = m_Player.FindAction("RightSpin", throwIfNotFound: true);
@@ -733,7 +733,7 @@ public class @PS4PlayerMovement : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_BackFlip;
     private readonly InputAction m_Player_RightRoll;
     private readonly InputAction m_Player_LeftRoll;
-    private readonly InputAction m_Player_StartFlip;
+    private readonly InputAction m_Player_FrontFlip;
     private readonly InputAction m_Player_FrontSpin;
     private readonly InputAction m_Player_LeftSpin;
     private readonly InputAction m_Player_RightSpin;
@@ -749,7 +749,7 @@ public class @PS4PlayerMovement : IInputActionCollection, IDisposable
         public InputAction @BackFlip => m_Wrapper.m_Player_BackFlip;
         public InputAction @RightRoll => m_Wrapper.m_Player_RightRoll;
         public InputAction @LeftRoll => m_Wrapper.m_Player_LeftRoll;
-        public InputAction @StartFlip => m_Wrapper.m_Player_StartFlip;
+        public InputAction @FrontFlip => m_Wrapper.m_Player_FrontFlip;
         public InputAction @FrontSpin => m_Wrapper.m_Player_FrontSpin;
         public InputAction @LeftSpin => m_Wrapper.m_Player_LeftSpin;
         public InputAction @RightSpin => m_Wrapper.m_Player_RightSpin;
@@ -778,9 +778,9 @@ public class @PS4PlayerMovement : IInputActionCollection, IDisposable
                 @LeftRoll.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLeftRoll;
                 @LeftRoll.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLeftRoll;
                 @LeftRoll.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLeftRoll;
-                @StartFlip.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStartFlip;
-                @StartFlip.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStartFlip;
-                @StartFlip.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStartFlip;
+                @FrontFlip.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFrontFlip;
+                @FrontFlip.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFrontFlip;
+                @FrontFlip.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFrontFlip;
                 @FrontSpin.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFrontSpin;
                 @FrontSpin.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFrontSpin;
                 @FrontSpin.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFrontSpin;
@@ -818,9 +818,9 @@ public class @PS4PlayerMovement : IInputActionCollection, IDisposable
                 @LeftRoll.started += instance.OnLeftRoll;
                 @LeftRoll.performed += instance.OnLeftRoll;
                 @LeftRoll.canceled += instance.OnLeftRoll;
-                @StartFlip.started += instance.OnStartFlip;
-                @StartFlip.performed += instance.OnStartFlip;
-                @StartFlip.canceled += instance.OnStartFlip;
+                @FrontFlip.started += instance.OnFrontFlip;
+                @FrontFlip.performed += instance.OnFrontFlip;
+                @FrontFlip.canceled += instance.OnFrontFlip;
                 @FrontSpin.started += instance.OnFrontSpin;
                 @FrontSpin.performed += instance.OnFrontSpin;
                 @FrontSpin.canceled += instance.OnFrontSpin;
@@ -870,7 +870,7 @@ public class @PS4PlayerMovement : IInputActionCollection, IDisposable
         void OnBackFlip(InputAction.CallbackContext context);
         void OnRightRoll(InputAction.CallbackContext context);
         void OnLeftRoll(InputAction.CallbackContext context);
-        void OnStartFlip(InputAction.CallbackContext context);
+        void OnFrontFlip(InputAction.CallbackContext context);
         void OnFrontSpin(InputAction.CallbackContext context);
         void OnLeftSpin(InputAction.CallbackContext context);
         void OnRightSpin(InputAction.CallbackContext context);

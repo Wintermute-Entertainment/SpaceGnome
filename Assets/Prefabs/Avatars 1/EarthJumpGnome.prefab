@@ -2640,9 +2640,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bda297108f60f24c80c721c7ba96004, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points: 0
   myAnimator: {fileID: 3529172663095747634}
-  currentPoints: 0
+  winPanelActive: 0
+  losePanelActive: 0
+  winPanel: {fileID: 0}
+  losePanel: {fileID: 0}
+  pointsText: {fileID: 0}
+  boostText: {fileID: 0}
+  armourText: {fileID: 0}
+  finalScoreText: {fileID: 0}
+  finalScoreLossText: {fileID: 0}
+  finalScoreDeathText: {fileID: 0}
 --- !u!114 &7631892031810250144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2663,13 +2671,21 @@ MonoBehaviour:
   myAnimator: {fileID: 3529172663095747634}
   zeroVelocity: {x: 0, y: 0, z: 0}
   negativeVelocity: {x: 0, y: -1, z: 0}
-  hitParticles: {fileID: 3420845746181459589}
+  hitParticles: {fileID: 0}
   turnSpeed: 20
   jumpSpeed: 30
   terminalYVelocity: -10
   myDefaultYVelocity: 0
   jumpYVelocity: 3
   jumpCancelYVelocity: 6
+  playerActions:
+    m_Name: Player Actions
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 7e9f353b-ee84-449d-b5a4-187749ee42b7
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
 --- !u!114 &1694522366968727455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2717,6 +2733,7 @@ MonoBehaviour:
   playerRigidBody: {fileID: 1694522366968727448}
   fallDamage: 3
   distancetoPlatform: 0
+  playerCollision: 0
 --- !u!114 &5824869308954993977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2729,6 +2746,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bafa007fc9d79bb43b9ece01e538b5e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOverPanel: {fileID: 0}
 --- !u!1 &7573821574949094914
 GameObject:
   m_ObjectHideFlags: 0
@@ -3434,12 +3452,6 @@ PrefabInstance:
 --- !u!4 &3420845746199808963 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400010, guid: 031d08f52af1daa4f929b85221519426,
-    type: 3}
-  m_PrefabInstance: {fileID: 3420845746199679305}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &3420845746181459589 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 19800012, guid: 031d08f52af1daa4f929b85221519426,
     type: 3}
   m_PrefabInstance: {fileID: 3420845746199679305}
   m_PrefabAsset: {fileID: 0}

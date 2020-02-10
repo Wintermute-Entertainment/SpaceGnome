@@ -38,7 +38,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "StartFlip",
+                    "name": "FrontFlip",
                     "type": "Button",
                     "id": "c2591483-18fe-47bd-92be-e120b72f4ec8",
                     "expectedControlType": "Button",
@@ -165,7 +165,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "StartFlip",
+                    "action": "FrontFlip",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -176,7 +176,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "StartFlip",
+                    "action": "FrontFlip",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -187,7 +187,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "StartFlip",
+                    "action": "FrontFlip",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -198,7 +198,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "StartFlip",
+                    "action": "FrontFlip",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -209,7 +209,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gampad",
-                    "action": "StartFlip",
+                    "action": "FrontFlip",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -220,7 +220,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gampad",
-                    "action": "StartFlip",
+                    "action": "FrontFlip",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },

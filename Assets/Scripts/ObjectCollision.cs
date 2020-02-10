@@ -9,22 +9,17 @@ public class ObjectCollision : MonoBehaviour
     public GameObject gnome;
     public Rigidbody rb;
 
-    
     static public int damage = 1;
     static public int fallDamage = 3;
     public bool hit;
-    
+    private bool hitInfo;
+
     public ParticleSystem hitParticles;
-
-
-    public float fallDistance;
     public Text armourText;
     
-
-    
-
     public void Awake()
     {
+        
         rb = GetComponent<Rigidbody>();
         //fallDistance = gameObject.transform.position.y - (gameObject.transform.position.y * 2);
     }
@@ -40,8 +35,10 @@ public class ObjectCollision : MonoBehaviour
         {
             // ApplyFallDamage();
             GnomeMovement.isIdle = true;
-           
+            //Explosions();
         }
+        
+
     }
     public void OnTriggerEnter(Collider other)
     {
@@ -51,7 +48,7 @@ public class ObjectCollision : MonoBehaviour
             hit = true;
             PlayerHealth.currentHealth -= damage;
             Instantiate(hitParticles).Play(true);
-
+      
 
 
         }
@@ -66,6 +63,9 @@ public class ObjectCollision : MonoBehaviour
 
     public void Update()
     {
+     
+           
+        
         //fallDistance = gnome.transform.position.y +20;
 
         if (hit == true)
@@ -82,9 +82,13 @@ public class ObjectCollision : MonoBehaviour
         //    GnomeMovement.isFallingIdle = true;
         //}
 
-        armourText.text = PlayerHealth.currentHealth.ToString();
+        armourText.text = PlayerHealth.currentHealth.ToString();  //Why is this causing nullRef errors??
     }
+    private void LateUpdate()
+    {
 
+    }
+    
     public void ApplyFallDamage()
     {
         PlayerHealth.currentHealth -= fallDamage;
@@ -95,7 +99,5 @@ public class ObjectCollision : MonoBehaviour
         PlayerHealth.currentHealth = PlayerHealth.health - damage;
         Debug.Log("Player took: " + damage + " fire damage.");
     }
-
-
 
 }

@@ -23,7 +23,7 @@ public class MusicRandomizer : MonoBehaviour
             PlayRandom();
         }
     }
-    void PlayRandom()
+    public void PlayRandom()
     {
         audioSource.clip = audioClips[Random.Range(0, audioClips.Length)];
         audioSource.Play();

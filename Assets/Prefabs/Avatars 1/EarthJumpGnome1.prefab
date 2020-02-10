@@ -1353,15 +1353,15 @@ GameObject:
   - component: {fileID: 3421375164017350298}
   - component: {fileID: 5843104780273464485}
   - component: {fileID: 1604636125427684871}
-  - component: {fileID: 1604636125427684869}
   - component: {fileID: 1604636125427684867}
   - component: {fileID: 6253119885119996735}
   - component: {fileID: 1051369736}
   - component: {fileID: 1051369738}
   - component: {fileID: 7303975412991496669}
   - component: {fileID: 1051369734}
+  - component: {fileID: 1051369740}
   m_Layer: 0
-  m_Name: EarthJumpGnome 1
+  m_Name: EarthJumpGnome1
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1481,6 +1481,14 @@ MonoBehaviour:
   myDefaultYVelocity: 0
   jumpYVelocity: 3
   jumpCancelYVelocity: 6
+  playerActions:
+    m_Name: Player Actions
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 9d4bcb1c-e8c4-4b37-a695-51122d05ac10
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
 --- !u!114 &5843104780273464485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1495,7 +1503,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationRange: {x: 10000, y: 10000}
   rotationSpeed: 4
-  dampingTime: 1
+  dampingTime: 0.2
   autoZeroVerticalOnMobile: 0
   autoZeroHorizontalOnMobile: 0
   relative: 1
@@ -1513,22 +1521,6 @@ CapsuleCollider:
   m_Height: 0.043869253
   m_Direction: 0
   m_Center: {x: 0.0015635572, y: 0.018479127, z: 0.0010187052}
---- !u!114 &1604636125427684869
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3366931122870224993}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93488b340a4ff8c46868267c87023124, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerRigidBody: {fileID: 5843104780273464482}
-  fallDamage: 3
-  distancetoPlatform: 0
-  playerCollision: 0
 --- !u!114 &1604636125427684867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1558,8 +1550,16 @@ MonoBehaviour:
   rb: {fileID: 5843104780273464482}
   hit: 0
   hitParticles: {fileID: 0}
-  fallDistance: 0
   armourText: {fileID: 0}
+  audioClips:
+  - {fileID: 8300000, guid: 45fbd733d05f5f14b86e0d9b6686b43d, type: 3}
+  - {fileID: 8300000, guid: b5ca1080105a5b640955193437453fb1, type: 3}
+  - {fileID: 8300000, guid: 0267a32d912b6664db5c1345d2976778, type: 3}
+  audioSource: {fileID: 1604636125258964876}
+  audioListener: {fileID: 1604636125362343276}
+  explosion1: {fileID: 8300000, guid: 45fbd733d05f5f14b86e0d9b6686b43d, type: 3}
+  explosion2: {fileID: 8300000, guid: b5ca1080105a5b640955193437453fb1, type: 3}
+  explosion3: {fileID: 8300000, guid: 0267a32d912b6664db5c1345d2976778, type: 3}
 --- !u!114 &1051369736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1611,11 +1611,91 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3366931122870224993}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 440db155e02d9164bb3154fb9fa8032c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 5
+--- !u!114 &1051369740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3366931122870224993}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: f0a828e1579ec5246a5003119b0104c5,
+    type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1adf179c-3579-48a0-9f3f-f78306b6eec7
+    m_ActionName: Player/Movement[/DualShock4GamepadHID/leftStick/up,/XInputControllerWindows/leftStick/up,/DualShock4GamepadHID/leftStick/down,/XInputControllerWindows/leftStick/down,/DualShock4GamepadHID/leftStick/left,/XInputControllerWindows/leftStick/left,/DualShock4GamepadHID/leftStick/right,/XInputControllerWindows/leftStick/right]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f1554c70-71ee-491a-9b23-7396476459ee
+    m_ActionName: Player/BackFlip[/Keyboard/leftShift,/Keyboard/s,/DualShock4GamepadHID/leftStick/down,/XInputControllerWindows/leftStick/down,/DualShock4GamepadHID/buttonSouth,/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 70dad09b-9410-45ec-a620-844d5576e9e5
+    m_ActionName: Player/RightRoll[/Keyboard/leftShift,/Keyboard/d,/DualShock4GamepadHID/leftStick/right,/XInputControllerWindows/leftStick/right,/DualShock4GamepadHID/buttonEast,/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 732998c9-142d-493f-8ba3-958ac54ca753
+    m_ActionName: Player/LeftRoll[/Keyboard/leftShift,/Keyboard/a,/DualShock4GamepadHID/leftStick/left,/XInputControllerWindows/leftStick/left,/DualShock4GamepadHID/buttonWest,/XInputControllerWindows/buttonWest]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c2591483-18fe-47bd-92be-e120b72f4ec8
+    m_ActionName: Player/FrontFlip[/Keyboard/leftShift,/Keyboard/w,/DualShock4GamepadHID/leftStick/up,/XInputControllerWindows/leftStick/up,/DualShock4GamepadHID/buttonNorth,/XInputControllerWindows/buttonNorth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ba7b98fa-5aa8-416d-a0c1-b28331056b4a
+    m_ActionName: Player/FrontSpin[/DualShock4GamepadHID/leftStick/up,/XInputControllerWindows/leftStick/up,/DualShock4GamepadHID/leftShoulder,/XInputControllerWindows/leftShoulder,/DualShock4GamepadHID/buttonNorth,/XInputControllerWindows/buttonNorth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 329243d5-5c0c-4425-8414-c2b8371ae06e
+    m_ActionName: Player/LeftSpin[/DualShock4GamepadHID/leftStick/left,/XInputControllerWindows/leftStick/left,/DualShock4GamepadHID/leftShoulder,/XInputControllerWindows/leftShoulder,/DualShock4GamepadHID/buttonWest,/XInputControllerWindows/buttonWest]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3465b547-20fe-4917-a40c-a57330f1fd36
+    m_ActionName: Player/RightSpin[/DualShock4GamepadHID/leftStick/right,/XInputControllerWindows/leftStick/right,/DualShock4GamepadHID/leftShoulder,/XInputControllerWindows/leftShoulder,/DualShock4GamepadHID/buttonEast,/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 319f83fc-50c8-4729-b008-dceb6e31f982
+    m_ActionName: Player/BackSpin[/DualShock4GamepadHID/leftStick/down,/XInputControllerWindows/leftStick/down,/DualShock4GamepadHID/leftShoulder,/XInputControllerWindows/leftShoulder,/DualShock4GamepadHID/buttonSouth,/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 93bd36f6-7082-4660-a075-3e8156de8805
+    m_ActionName: Player/FloatUp[/DualShock4GamepadHID/leftTrigger,/XInputControllerWindows/leftTrigger]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 00dd3188-6686-4634-94e9-1796c4794445
+    m_ActionName: Player/FloatDown[/DualShock4GamepadHID/rightTrigger,/XInputControllerWindows/rightTrigger]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fdb65196-05ae-41ae-b9ed-50d4a1cf0909
+    m_ActionName: Player/NoseDive[/DualShock4GamepadHID/rightShoulder,/XInputControllerWindows/rightShoulder]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: Gampad
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 1604636125362343277}
 --- !u!1 &3425367207724578104
 GameObject:
   m_ObjectHideFlags: 0

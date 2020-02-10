@@ -12,6 +12,7 @@ TagManager:
   - gameOverPanel
   - OxygenPowerUp
   - Junk
+  - Meteor
   layers:
   - Default
   - TransparentFX

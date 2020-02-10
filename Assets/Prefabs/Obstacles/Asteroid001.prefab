@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -3809714699650748172}
   m_Layer: 0
   m_Name: Asteroid001
-  m_TagString: Untagged
+  m_TagString: Meteor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,6 +111,5 @@ MonoBehaviour:
   rb: {fileID: 0}
   hit: 0
   hitParticles: {fileID: 19800002, guid: 180149b1a35449044a27b451e816d2de, type: 3}
-  fallDistance: 0
   armourText: {fileID: 143510576893061264, guid: 1b50575d23f576b44a1ae9d40b5eb38a,
     type: 3}
