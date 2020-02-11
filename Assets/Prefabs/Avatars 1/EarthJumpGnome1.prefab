@@ -736,9 +736,10 @@ AudioSource:
   m_GameObject: {fileID: 1604636125362343279}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  OutputAudioMixerGroup: {fileID: 24300002, guid: d0879086e75dcb8438fe551c4a64d2f6,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: 45fbd733d05f5f14b86e0d9b6686b43d, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -1354,7 +1355,6 @@ GameObject:
   - component: {fileID: 5843104780273464485}
   - component: {fileID: 1604636125427684871}
   - component: {fileID: 1604636125427684867}
-  - component: {fileID: 6253119885119996735}
   - component: {fileID: 1051369736}
   - component: {fileID: 1051369738}
   - component: {fileID: 7303975412991496669}
@@ -1466,7 +1466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0e60278075bfe4e831b93dea3c8844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 50
+  speed: 40
   myTransform: {fileID: 1793250536250014322}
   playerCollider: {fileID: 1604636125427684871}
   mainCameraTransform: {fileID: 1604636125362343274}
@@ -1481,14 +1481,6 @@ MonoBehaviour:
   myDefaultYVelocity: 0
   jumpYVelocity: 3
   jumpCancelYVelocity: 6
-  playerActions:
-    m_Name: Player Actions
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 9d4bcb1c-e8c4-4b37-a695-51122d05ac10
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
 --- !u!114 &5843104780273464485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1534,32 +1526,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverPanel: {fileID: 0}
---- !u!114 &6253119885119996735
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3366931122870224993}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b7df51f872f14e459e97e82a5eb9c92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gnome: {fileID: 3366931122870224993}
-  rb: {fileID: 5843104780273464482}
-  hit: 0
-  hitParticles: {fileID: 0}
-  armourText: {fileID: 0}
-  audioClips:
-  - {fileID: 8300000, guid: 45fbd733d05f5f14b86e0d9b6686b43d, type: 3}
-  - {fileID: 8300000, guid: b5ca1080105a5b640955193437453fb1, type: 3}
-  - {fileID: 8300000, guid: 0267a32d912b6664db5c1345d2976778, type: 3}
-  audioSource: {fileID: 1604636125258964876}
-  audioListener: {fileID: 1604636125362343276}
-  explosion1: {fileID: 8300000, guid: 45fbd733d05f5f14b86e0d9b6686b43d, type: 3}
-  explosion2: {fileID: 8300000, guid: b5ca1080105a5b640955193437453fb1, type: 3}
-  explosion3: {fileID: 8300000, guid: 0267a32d912b6664db5c1345d2976778, type: 3}
 --- !u!114 &1051369736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1617,6 +1583,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  movement: {x: 0, y: 0, z: 0}
 --- !u!114 &1051369740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1692,10 +1659,10 @@ MonoBehaviour:
     m_ActionId: fdb65196-05ae-41ae-b9ed-50d4a1cf0909
     m_ActionName: Player/NoseDive[/DualShock4GamepadHID/rightShoulder,/XInputControllerWindows/rightShoulder]
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Gampad
+  m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
-  m_Camera: {fileID: 1604636125362343277}
+  m_Camera: {fileID: 0}
 --- !u!1 &3425367207724578104
 GameObject:
   m_ObjectHideFlags: 0

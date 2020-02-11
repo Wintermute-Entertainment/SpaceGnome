@@ -184,6 +184,30 @@ public class Points : MonoBehaviour
                     points += 30f;
                 }
             }
+            if (SatDish.satDishCollided)
+            {
+                Debug.Log("COMMUNICATION IS KEY!!!");
+                boost += 5f;
+                points += 5f;
+                    if (myAnimator.GetBool("frontFlip"))
+                    {
+                    Debug.Log("DISHING IT OUT!!!");
+                    boost += 10f;
+                    points += 10f;
+                    }
+            }
+            if (MoonLander.moonLanderCollided)
+            {
+                Debug.Log("ONE SMALL STEP!!!");
+                boost += 5f;
+                points += 5f;
+                if (myAnimator.GetBool("Jumping"))
+                {
+                    Debug.Log("ONE GIANT LEAP!!!");
+                    boost += 10f;
+                    points += 10f;
+                }
+            }
 
         }
     }
